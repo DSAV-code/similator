@@ -1,0 +1,28 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Setuptools
+.build/
+dist/
+*.egg-info/
+
+# Sphinx documentation
+docs/build/.doctrees/
+docs/build/.buildinfo
+
+# Virtual environment
+.venv/
+
+# VS Code
+.vscode/
+
+# Pytest cache
+.pytest_cache/
+
+# Python packaging artifacts
+*.egg
+*.wheel
+pip-wheel-metadata/

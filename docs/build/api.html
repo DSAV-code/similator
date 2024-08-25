@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Reference &#8212; Similator 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=c058f7c8" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advanced Usage" href="advanced.html" />
+    <link rel="prev" title="Quickstart" href="quickstart.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-similator">
+<span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-similator" title="Link to this heading">¶</a></h1>
+<dl class="py exception">
+<dt class="sig sig-object py" id="similator.src.text_similator.EmptyValidData">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">similator.src.text_similator.</span></span><span class="sig-name descname"><span class="pre">EmptyValidData</span></span><a class="headerlink" href="#similator.src.text_similator.EmptyValidData" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception raised when <cite>valid_data</cite> is empty or not provided during a search operation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="similator.src.text_similator.Position">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">similator.src.text_similator.</span></span><span class="sig-name descname"><span class="pre">Position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">win_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#similator.src.text_similator.Position" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="similator.src.text_similator.Position.arr1">
+<span class="sig-name descname"><span class="pre">arr1</span></span><a class="headerlink" href="#similator.src.text_similator.Position.arr1" title="Link to this definition">¶</a></dt>
+<dd><p>The position of the match in the array of the text sought. In case of making a comparison, it will be the shortest array.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="similator.src.text_similator.Position.arr2">
+<span class="sig-name descname"><span class="pre">arr2</span></span><a class="headerlink" href="#similator.src.text_similator.Position.arr2" title="Link to this definition">¶</a></dt>
+<dd><p>The position of the match in the array of the validated text. In case of making a comparison, it will be the longest array.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="similator.src.text_similator.Position.win_size">
+<span class="sig-name descname"><span class="pre">win_size</span></span><a class="headerlink" href="#similator.src.text_similator.Position.win_size" title="Link to this definition">¶</a></dt>
+<dd><p>The size of match.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="similator.src.text_similator.Score">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">similator.src.text_similator.</span></span><span class="sig-name descname"><span class="pre">Score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#similator.src.text_similator.Score" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="similator.src.text_similator.Score.points">
+<span class="sig-name descname"><span class="pre">points</span></span><a class="headerlink" href="#similator.src.text_similator.Score.points" title="Link to this definition">¶</a></dt>
+<dd><p>The value found.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="similator.src.text_similator.Score.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#similator.src.text_similator.Score.value" title="Link to this definition">¶</a></dt>
+<dd><p>The Match Score.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="similator.src.text_similator.TextSimilator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">similator.src.text_similator.</span></span><span class="sig-name descname"><span class="pre">TextSimilator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valid_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#similator.src.valid_data.ValidData" title="similator.src.valid_data.ValidData"><span class="pre">ValidData</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_sensitive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_cached</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cache_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#similator.src.text_similator.TextSimilator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for comparing text data using bytearrays and optionally caching search results.</p>
+<dl>
+<dt>Args:</dt><dd><p>valid_data (Union[ValidData, Collection[str], None]): An instance of <cite>ValidData</cite> or a collection of text strings to compare. If a collection of strings is provided, it will automatically be converted into a <cite>ValidData</cite> instance.
+<p>encoding (str): The text encoding. Default is ‘utf-8’.</p>
+<p>case_sensitive (bool): Indicates whether the validation should be case-sensitive. Default is True.</p>
+<p>auto_cached (bool): Indicates whether search results should be automatically cached. Default is False.</p>
+<p>max_cache_size (int): The maximum size of the cache if <cite>auto_cached</cite> is True. Default is 100.</p></p>
+</dd>
+<dt>Attributes:</dt><dd><p>valid_data (ValidData): An instance of <cite>ValidData</cite> containing the text strings to compare.</p>
+<p>encoding (str): The encoding used for text strings.</p>
+<p>case_sensitive (bool): Indicates whether the validation is case-sensitive.</p>
+<p>auto_cached (bool): Indicates whether search results are automatically cached.</p>
+<p>memory (Memory | None): Instance of the <cite>Memory</cite> class used to store cached results, or <cite>None</cite> if <cite>auto_cached</cite> is False.</p>
+</dd>
+<dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valid_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid_data_instance</span> <span class="o">=</span> <span class="n">ValidData</span><span class="p">(</span><span class="n">valid_strings</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text_simulator</span> <span class="o">=</span> <span class="n">TextSimilator</span><span class="p">(</span><span class="n">valid_data_instance</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">search_value</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">text_simulator</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_value</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span>
+<span class="go">[Score(value=&#39;hello&#39;, points=2.0)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value1</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value2</span> <span class="o">=</span> <span class="s2">&quot;hell&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">similarity_score</span> <span class="o">=</span> <span class="n">text_simulator</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">value1</span><span class="p">,</span> <span class="n">value2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">similarity_score</span>
+<span class="go">1.94</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.text_similator.TextSimilator.compare">
+<span class="sig-name descname"><span class="pre">compare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytearray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytearray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">second_was_validated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#similator.src.text_similator.TextSimilator.compare" title="Link to this definition">¶</a></dt>
+<dd><p>Compares two text values and returns a similarity score.</p>
+<dl>
+<dt>Args:</dt><dd><p>value1 (str|bytearray): The first value to compare.</p>
+<p>value2 (str|bytearray): The second value to compare.</p>
+<p>second_was_validated (bool): Indicates whether <cite>value2</cite> is assumed to be the correct value.</p>
+<blockquote>
+<div><p>This affects how the comparison is performed and points are calculated. Default is False.</p>
+</div></blockquote>
+</dd>
+<dt>Returns:</dt><dd><p>float: The similarity score between <cite>value1</cite> and <cite>value2</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.text_similator.TextSimilator.search">
+<span class="sig-name descname"><span class="pre">search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.85</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#similator.src.text_similator.TextSimilator.search" title="Link to this definition">¶</a></dt>
+<dd><p>Searches for matches in <cite>valid_data</cite> with the provided value based on a similarity threshold.</p>
+<p>If <cite>auto_cached</cite> is enabled, it first checks the cache for previous results. If the search has been performed before, the cached result is returned. If not, the search is performed, and the result is then cached for future use.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>value (str): The value to search for.</p>
+<p>threshold (float): The minimum score threshold to consider a match. Default is 0.85.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: A list of <cite>Score</cite> objects sorted by <cite>points</cite> in descending order.</p>
+</dd>
+<dt>Raises:</dt><dd><p>EmptyValidData: If <cite>valid_data</cite> is empty or not defined.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="similator.src.memory.Memory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">similator.src.memory.</span></span><span class="sig-name descname"><span class="pre">Memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#similator.src.memory.Memory" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to manage a cache for storing search results with a defined maximum size.</p>
+<dl>
+<dt>Args:</dt><dd><p>max_size (int): The maximum number of items the cache can hold.</p>
+</dd>
+<dt>Attributes:</dt><dd><p>max_size (int): The maximum size of the cache.</p>
+<p>memory (OrderedDict): The internal cache storage. Stores items in insertion order.</p>
+</dd>
+<dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span> <span class="o">=</span> <span class="n">Memory</span><span class="p">(</span><span class="n">max_size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">add_to_memory</span><span class="p">(</span><span class="s2">&quot;key1&quot;</span><span class="p">,</span> <span class="s2">&quot;value1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">add_to_memory</span><span class="p">(</span><span class="s2">&quot;key2&quot;</span><span class="p">,</span> <span class="s2">&quot;value2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">get_from_memory</span><span class="p">(</span><span class="s2">&quot;key1&quot;</span><span class="p">)</span>
+<span class="go">&#39;value1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">add_to_memory</span><span class="p">(</span><span class="s2">&quot;key3&quot;</span><span class="p">,</span> <span class="s2">&quot;value3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">add_to_memory</span><span class="p">(</span><span class="s2">&quot;key4&quot;</span><span class="p">,</span> <span class="s2">&quot;value4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">get_from_memory</span><span class="p">(</span><span class="s2">&quot;key2&quot;</span><span class="p">)</span>
+<span class="go">&#39;value2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">get_from_memory</span><span class="p">(</span><span class="s2">&quot;key1&quot;</span><span class="p">)</span>
+<span class="go">None  # Because &quot;key1&quot; was the oldest and removed when adding &quot;key4&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">cls</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">memory</span><span class="o">.</span><span class="n">memory</span>
+<span class="go">OrderedDict()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.memory.Memory.add_to_memory">
+<span class="sig-name descname"><span class="pre">add_to_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#similator.src.memory.Memory.add_to_memory" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a key-value pair to the cache. If the cache exceeds the maximum size, the oldest item is removed.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>key (Any): The key to be stored in the cache.</p>
+<p>value (Any): The value associated with the key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.memory.Memory.cls">
+<span class="sig-name descname"><span class="pre">cls</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#similator.src.memory.Memory.cls" title="Link to this definition">¶</a></dt>
+<dd><p>Clears the cache, removing all stored key-value pairs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.memory.Memory.export_memory">
+<span class="sig-name descname"><span class="pre">export_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#similator.src.memory.Memory.export_memory" title="Link to this definition">¶</a></dt>
+<dd><p>Exports the current cache data to a JSON file.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path (str): The path to the file where the cache data will be saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.memory.Memory.get_from_memory">
+<span class="sig-name descname"><span class="pre">get_from_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#similator.src.memory.Memory.get_from_memory" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieves a value from the cache based on the key.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>key (Any): The key to search for in the cache.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Any: The value associated with the key if found, else None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.memory.Memory.load_memory">
+<span class="sig-name descname"><span class="pre">load_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#similator.src.memory.Memory.load_memory" title="Link to this definition">¶</a></dt>
+<dd><p>Loads cache data from a JSON file into the memory. This overwrites any existing data in memory.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_path (str): The path to the JSON file containing cache data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="similator.src.valid_data.ValidData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">similator.src.valid_data.</span></span><span class="sig-name descname"><span class="pre">ValidData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valid_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_sensitive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#similator.src.valid_data.ValidData" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for handling and validating a collection of text strings by converting them to bytearrays.</p>
+<dl>
+<dt>Args:</dt><dd><p>valid_data (Collection[str]|None): A collection of valid text strings to validate and convert.</p>
+<p>encoding (str): The text encoding. Default is ‘utf-8’.</p>
+<p>case_sensitive (bool): Determines if the validation is case-sensitive. Default is True.</p>
+</dd>
+<dt>Attributes:</dt><dd><p>encoding (str): The encoding used for text strings.</p>
+<p>case_sensitive (bool): Indicates whether the validation is case-sensitive.</p>
+<p>__data (list[bytearray]): A collection of validated values transformed into bytearrays.</p>
+</dd>
+<dt>Example:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">valid_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;World&quot;</span><span class="p">,</span> <span class="s2">&quot;Text&quot;</span><span class="p">,</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid_data_instance</span> <span class="o">=</span> <span class="n">ValidData</span><span class="p">(</span><span class="n">valid_strings</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">case_sensitive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validated_data</span> <span class="o">=</span> <span class="n">valid_data_instance</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">validated_data</span><span class="p">]</span>
+<span class="go">[&#39;hello&#39;, &#39;world&#39;, &#39;text&#39;, &#39;example&#39;, &#39;python&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid_data_instance</span><span class="o">.</span><span class="n">is_empty</span><span class="p">()</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.valid_data.ValidData.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">bytearray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#similator.src.valid_data.ValidData.get_data" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the validated and transformed bytearrays.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>list[bytearray]: A list of validated and transformed bytearrays.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="similator.src.valid_data.ValidData.is_empty">
+<span class="sig-name descname"><span class="pre">is_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#similator.src.valid_data.ValidData.is_empty" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if the validated data is empty.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: True if no valid data is present, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Similator</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#similator.src.text_similator.EmptyValidData"><code class="docutils literal notranslate"><span class="pre">EmptyValidData</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#similator.src.text_similator.Position"><code class="docutils literal notranslate"><span class="pre">Position</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#similator.src.text_similator.Score"><code class="docutils literal notranslate"><span class="pre">Score</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#similator.src.text_similator.TextSimilator"><code class="docutils literal notranslate"><span class="pre">TextSimilator</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#similator.src.memory.Memory"><code class="docutils literal notranslate"><span class="pre">Memory</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#similator.src.valid_data.ValidData"><code class="docutils literal notranslate"><span class="pre">ValidData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="quickstart.html" title="previous chapter">Quickstart</a></li>
+      <li>Next: <a href="advanced.html" title="next chapter">Advanced Usage</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Diego San Andrés Vasco.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.0.2</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
