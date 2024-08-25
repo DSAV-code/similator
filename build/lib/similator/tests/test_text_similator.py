@@ -9,7 +9,7 @@ Similator is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 
 You should have received a copy of the GNU General Public License along with Similator. If not, see <https://www.gnu.org/licenses/>.
 """
-from app.src import TextSimilator, Score, ValidData
+from ..src import TextSimilator, Score, ValidData
 
 def test_text_similator_search():
     valid_strings = ["Hello", "World", "Python", "Programming"]

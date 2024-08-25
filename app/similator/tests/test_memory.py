@@ -13,7 +13,7 @@ import pytest
 import os
 import json
 from collections import OrderedDict
-from app.src import Memory
+from ..src import Memory
 
 @pytest.fixture
 def memory():

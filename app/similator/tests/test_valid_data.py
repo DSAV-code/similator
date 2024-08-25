@@ -10,7 +10,7 @@ Similator is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 You should have received a copy of the GNU General Public License along with Similator. If not, see <https://www.gnu.org/licenses/>.
 """
 import pytest
-from app.src import ValidData
+from ..src import ValidData
 
 def test_valid_data_initialization():
     valid_strings = ["Hello", "World", "Python"]

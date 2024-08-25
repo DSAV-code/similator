@@ -9,3 +9,6 @@ Similator is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 
 You should have received a copy of the GNU General Public License along with Similator. If not, see <https://www.gnu.org/licenses/>.
 """
+from .memory import Memory
+from .text_similator import TextSimilator, Score, Position, EmptyValidData
+from .valid_data import ValidData

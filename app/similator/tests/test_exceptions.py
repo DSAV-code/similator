@@ -10,7 +10,7 @@ Similator is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 You should have received a copy of the GNU General Public License along with Similator. If not, see <https://www.gnu.org/licenses/>.
 """
 import pytest
-from app.src import ValidData, TextSimilator, EmptyValidData, Memory
+from ..src import ValidData, TextSimilator, EmptyValidData, Memory
 
 def test_empty_valid_data_exception():
     empty_data_instance = ValidData([])
