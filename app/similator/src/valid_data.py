@@ -17,7 +17,7 @@ class ValidData:
     A class for handling and validating a collection of text strings by converting them to bytearrays.
 
     Args:
-        valid_data (Collection[str]|None): A collection of valid text strings to validate and convert.
+        valid_data (Union[Collection[str],None]): A collection of valid text strings to validate and convert.
         encoding (str): The text encoding. Default is 'utf-8'.
         case_sensitive (bool): Determines if the validation is case-sensitive. Default is True.
     
