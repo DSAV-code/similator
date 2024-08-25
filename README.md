@@ -7,7 +7,7 @@
 ![Tests](https://img.shields.io/github/actions/workflow/status/DSAV-code/similator/run_tests.yml?branch=main)
 
 
-![Similator Logo](similator-logo.png)
+![Logo](https://i.imgur.com/mQE6c9Q.png)
 
 **Similator** is a powerful Python library designed for efficient text validation and comparison at the byte level. With features like customizable similarity thresholds, case-sensitive or case-insensitive comparisons, and an optional caching mechanism, Similator is ideal for tasks requiring precise text matching and validation.
 
