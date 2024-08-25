@@ -10,7 +10,7 @@ Similator is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 You should have received a copy of the GNU General Public License along with Similator. If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import Collection, NoReturn, Union
+from typing import Collection, NoReturn, Union, List
 
 class ValidData:
     """
@@ -24,7 +24,7 @@ class ValidData:
     Attributes:
         encoding (str): The encoding used for text strings.
         case_sensitive (bool): Indicates whether the validation is case-sensitive.
-        __data (list[bytearray]): A collection of validated values transformed into bytearrays.
+        __data (List[bytearray]): A collection of validated values transformed into bytearrays.
 
     Example:
         >>> valid_strings = ["Hello", "World", "Text", "Example", "Python"]
@@ -41,15 +41,15 @@ class ValidData:
         self.case_sensitive = case_sensitive
         self.__data = self._validate_and_transform(valid_data) if valid_data else []
 
-    def _validate_and_transform(self, valid_data: Union[Collection[str],list[NoReturn]]) -> list[bytearray]:
+    def _validate_and_transform(self, valid_data: Union[Collection[str],List[NoReturn]]) -> List[bytearray]:
         """
         Validates the provided text strings and transforms them into bytearrays.
 
         Args:
-            valid_data (Collection[str]|list[NoReturn]): A collection of valid text strings.
+            valid_data (Collection[str]|List[NoReturn]): A collection of valid text strings.
 
         Returns:
-            list[bytearray]: A list of validated and transformed bytearrays.
+            List[bytearray]: A list of validated and transformed bytearrays.
         """
         if not self.case_sensitive:
             valid_data = set(value.casefold() for value in valid_data if value)
@@ -58,12 +58,12 @@ class ValidData:
 
         return [bytearray(value, self.encoding) for value in valid_data if value]
 
-    def get_data(self) -> list[bytearray]:
+    def get_data(self) -> List[bytearray]:
         """
         Returns the validated and transformed bytearrays.
 
         Returns:
-            list[bytearray]: A list of validated and transformed bytearrays.
+            List[bytearray]: A list of validated and transformed bytearrays.
         """
         return self.__data
 

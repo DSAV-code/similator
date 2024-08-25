@@ -12,7 +12,7 @@ You should have received a copy of the GNU General Public License along with Sim
 
 from collections import namedtuple
 from operator import attrgetter
-from typing import Collection, Generator, Union
+from typing import Collection, Generator, Union, List
 from .memory import Memory
 from .valid_data import ValidData
 
@@ -172,7 +172,7 @@ class TextSimilator:
         return points
 
     
-    def __get_positions(self, array1:bytearray, array2:bytearray, window_size:int) -> list[Position]|list:
+    def __get_positions(self, array1:bytearray, array2:bytearray, window_size:int) -> List[Position]|list:
         """
         Finds the positions where there are matches between two `bytearrays` using a sliding window.
 
@@ -182,7 +182,7 @@ class TextSimilator:
             window_size (int): The size of the sliding window.
 
         Returns:
-            list[Position]: A list of matching positions.
+            List[Position]: A list of matching positions.
         """
         position_list = []
         for array1_index, array1_window in enumerate(self.__sliding_window(array1, window_size)):
@@ -192,16 +192,16 @@ class TextSimilator:
         return position_list
     
     @classmethod
-    def __mask_array(cls, array_size:int, matchs_list:list[Position]) -> list[bool]:
+    def __mask_array(cls, array_size:int, matchs_list:List[Position]) -> List[bool]:
         """
         Generates a mask for a `bytearray` based on the found matches.
 
         Args:
             array_size (int): The size of the `bytearray`.
-            matchs_list (list[Position]): A list of matching positions.
+            matchs_list (List[Position]): A list of matching positions.
 
         Returns:
-            list[bool]: Generates a mask for a `bytearray` based on the found matches, where True indicates a non-matching position and False indicates a matching one.
+            List[bool]: Generates a mask for a `bytearray` based on the found matches, where True indicates a non-matching position and False indicates a matching one.
         """
         mask = [True] * array_size
         for position in matchs_list:
