@@ -10,7 +10,7 @@ Similator is distributed in the hope that it will be useful, but WITHOUT ANY WAR
 You should have received a copy of the GNU General Public License along with Similator. If not, see <https://www.gnu.org/licenses/>.
 """
 
-from typing import Collection, Never
+from typing import Collection, NoReturn, Union
 
 class ValidData:
     """
@@ -36,17 +36,17 @@ class ValidData:
         False
     """
 
-    def __init__(self, valid_data: Collection[str]|None = None, encoding: str = 'utf-8', case_sensitive: bool = True) -> None:
+    def __init__(self, valid_data: Union[Collection[str],None] = None, encoding: str = 'utf-8', case_sensitive: bool = True) -> None:
         self.encoding = encoding
         self.case_sensitive = case_sensitive
         self.__data = self._validate_and_transform(valid_data) if valid_data else []
 
-    def _validate_and_transform(self, valid_data: Collection[str]|list[Never]) -> list[bytearray]:
+    def _validate_and_transform(self, valid_data: Union[Collection[str],list[NoReturn]]) -> list[bytearray]:
         """
         Validates the provided text strings and transforms them into bytearrays.
 
         Args:
-            valid_data (Collection[str]): A collection of valid text strings.
+            valid_data (Collection[str]|list[NoReturn]): A collection of valid text strings.
 
         Returns:
             list[bytearray]: A list of validated and transformed bytearrays.
