@@ -12,7 +12,7 @@ You should have received a copy of the GNU General Public License along with Sim
 
 from collections import namedtuple
 from operator import attrgetter
-from typing import Collection, Generator, Union, List
+from typing import Collection, Generator, Union, List, NoReturn
 from .memory import Memory
 from .valid_data import ValidData
 
@@ -172,7 +172,7 @@ class TextSimilator:
         return points
 
     
-    def __get_positions(self, array1:bytearray, array2:bytearray, window_size:int) -> List[Position]|list:
+    def __get_positions(self, array1:bytearray, array2:bytearray, window_size:int) -> Union[List[Position],List[NoReturn]]:
         """
         Finds the positions where there are matches between two `bytearrays` using a sliding window.
 
