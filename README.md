@@ -1,4 +1,5 @@
 <div align="center">
+  <source srcset="https://i.imgur.com/jrmxyXR.png" media="(prefers-color-scheme: dark)">
   <img src="https://i.imgur.com/mQE6c9Q.png" />
 </div>
 
