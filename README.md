@@ -9,6 +9,7 @@
 
 [![Stars](https://img.shields.io/github/stars/DSAV-code/similator?style=social)](https://github.com/DSAV-code/similator)
 [![Pypi Version](https://img.shields.io/pypi/v/similator)](https://pypi.org/project/similator)
+[![Documentation Status](https://readthedocs.org/projects/similator/badge/?version=latest)](https://similator.readthedocs.io/en/latest/?badge=latest)
 [![License GPL v3.0](https://img.shields.io/badge/license-GPL%20v3.0-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/DSAV-code/similator.svg)](https://github.com/DSAV-code/similator/issues)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-brightgreen.svg)](https://www.python.org/downloads/)
