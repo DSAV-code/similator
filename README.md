@@ -1,13 +1,18 @@
-# Similator
+<div align="center">
+  <img src="https://i.imgur.com/mQE6c9Q.png" />
+</div>
+
+-----------------
 
 [![Stars](https://img.shields.io/github/stars/DSAV-code/similator?style=social)](https://github.com/DSAV-code/similator)
+[![Pypi Version](https://img.shields.io/pypi/v/similator)](https://pypi.org/project/similator)
 [![License GPL v3.0](https://img.shields.io/badge/license-GPL%20v3.0-blue.svg)](LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/DSAV-code/similator.svg)](https://github.com/DSAV-code/similator/issues)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-brightgreen.svg)](https://www.python.org/downloads/)
 ![Tests](https://img.shields.io/github/actions/workflow/status/DSAV-code/similator/run_tests.yml?branch=main)
 
 
-![Logo](https://i.imgur.com/mQE6c9Q.png)
+# Similator: Powerfull Python text validation tool
 
 **Similator** is a powerful Python library designed for efficient text validation and comparison at the byte level. With features like customizable similarity thresholds, case-sensitive or case-insensitive comparisons, and an optional caching mechanism, Similator is ideal for tasks requiring precise text matching and validation.
 
