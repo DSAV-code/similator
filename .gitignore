@@ -1,28 +1,78 @@
+/target
+/.ipynb_checkpoints
+/.ruff_cache
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.pytest_cache/
 *.py[cod]
-*$py.class
 
-# Setuptools
-.build/
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+.venv/
+env/
+bin/
+build/
+develop-eggs/
 dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+include/
+man/
+venv/
 *.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+pip-selfcheck.json
+
+# Unit test / coverage reports / pytest
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+tests/
+
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+.DS_Store
 
 # Sphinx documentation
-docs/build/.doctrees/
-docs/build/.buildinfo
+docs/_build/
+docs/make.bat
+docs/Makefile
 
-# Virtual environment
-.venv/
+# PyCharm
+.idea/
 
-# VS Code
+# VSCode
 .vscode/
 
-# Pytest cache
-.pytest_cache/
-
-# Python packaging artifacts
-*.egg
-*.wheel
-pip-wheel-metadata/
+# Pyenv
+.python-version

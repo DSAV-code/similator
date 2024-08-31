@@ -1,0 +1,12 @@
+[package]
+authors = ["{name = Diego San Andrés Vasco, email = sanandresvascodiego@gmail.com}"]
+name = "similator"
+version = "0.2.0"
+edition = "2021"
+
+[lib]
+name = "_rst_similator"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.18", features = ["extension-module", "generate-import-lib"] }
