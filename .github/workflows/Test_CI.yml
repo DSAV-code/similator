@@ -152,7 +152,6 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
-    if: "startsWith(github.ref, 'refs/tags/')"
     needs: [linux, musllinux, windows, macos, sdist]
     steps:
       - name: Download all the dists
@@ -161,10 +160,8 @@ jobs:
           name: sdist
           path: dist/
 
-      - name: Publish to TestPyPI
-        uses: pypa/gh-action-pypi-publish@v1.9
+      - name: Publish package to TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          repository-url: https://test.pypi.org/legacy/
-          username: __token__
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
-          files: dist/*
+          repository-url: https://test.pypi.org/legacy/
