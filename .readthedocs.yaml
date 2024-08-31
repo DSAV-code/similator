@@ -9,7 +9,7 @@ build:
   os: "ubuntu-20.04"
   tools:
     python: "3.9"
-    rust: "1.80.1"
+    rust: "1.78"
 
 python:
   install:
