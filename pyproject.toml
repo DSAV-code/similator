@@ -1,15 +1,15 @@
 [build-system]
-requires = ["maturin"]
+requires = ["maturin>=1.7.1"]
 build-backend = "maturin"
 
 [project]
 name = "similator"
-version = "0.2.2"
+version = "0.2.3"
 description = "A powerful text similarity module with Rust optimizations."
 readme = { file = "README.md", content-type = "text/markdown", include = true }
 license = {file = "LICENSE"}
 authors = [
-    {name = "Diego San Andrés Vasco", email = "sanandresvascodiego@gmail.com"}
+    {name = "Diego San Andres Vasco", email = "sanandresvascodiego@gmail.com"},
 ]
 keywords = [
     "similarity",
@@ -26,6 +26,8 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
+
+dependencies = ["maturin>=1.7.1"]
 dynamic = ["version"]
 
 [tool.maturin]
