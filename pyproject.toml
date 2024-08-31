@@ -1,13 +1,25 @@
 [build-system]
-requires = ["maturin>=1.7,<2.0"]
+requires = ["maturin"]
 build-backend = "maturin"
 
 [project]
 name = "similator"
-version = "0.2.0"
+version = "0.2.2"
 description = "A powerful text similarity module with Rust optimizations."
 readme = { file = "README.md", content-type = "text/markdown", include = true }
-authors = [{ name = "Diego San Andrés Vasco", email = "sanandresvascodiego@gmail.com" }]
+license = {file = "LICENSE"}
+authors = [
+    {name = "Diego San Andrés Vasco", email = "sanandresvascodiego@gmail.com"}
+]
+keywords = [
+    "similarity",
+    "similar",
+    "fuzzy",
+    "validate",
+    "search",
+    "compare",
+    "text"
+]
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Rust",
