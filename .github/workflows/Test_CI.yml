@@ -47,7 +47,7 @@ jobs:
       - name: Upload wheels
         uses: actions/upload-artifact@v4
         with:
-          name: wheels-linux-${{ matrix.platform.target }}
+          name: wheels-${{ matrix.platform.target }}
           path: dist
 
   musllinux:
@@ -146,24 +146,25 @@ jobs:
       - name: Upload sdist
         uses: actions/upload-artifact@v4
         with:
-          name: wheels-sdist
+          name: sdist
           path: dist
 
   release:
     name: Release
     runs-on: ubuntu-latest
+    if: "startsWith(github.ref, 'refs/tags/')"
     needs: [linux, musllinux, windows, macos, sdist]
     steps:
       - name: Download all the dists
         uses: actions/download-artifact@v4
         with:
-          name: wheels-sdist
+          name: sdist
           path: dist/
 
       - name: Publish to TestPyPI
-        uses: PyO3/maturin-action@v1
-        env:
-          MATURIN_PYPI_TOKEN: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        uses: pypa/gh-action-pypi-publish@v1.9
         with:
-          command: upload
-          args: --non-interactive --skip-existing --repository-url https://test.pypi.org/legacy/ dist/*
+          repository-url: https://test.pypi.org/legacy/
+          username: __token__
+          password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          files: dist/*
