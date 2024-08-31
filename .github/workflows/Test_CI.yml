@@ -164,7 +164,6 @@ jobs:
     environment:
       name: testpypi
       url: https://test.pypi.org/project/similator/
-      MATURIN_PYPI_TOKEN: ${{ secrets.TEST_PYPI_API_TOKEN }}
 
     permissions:
       id-token: ${{ secrets.TEST_PYPI_API_TOKEN }}
