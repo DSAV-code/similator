@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "similator"
-version = "0.2.5"
+version = "0.2.6"
 description = "A powerful text similarity module with Rust optimizations."
 readme = "README.md"
 license = {file = "LICENSE"}
